@@ -1,0 +1,10 @@
+#dog-img {
+  height: 500px;
+  width: 700px;
+}
+#dog-list {
+  width: 100%;
+  outline-style: ridge;
+  outline-color: green;
+
+}
