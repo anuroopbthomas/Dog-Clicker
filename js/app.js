@@ -9,7 +9,7 @@ var model = {
     },
     {
       clickCount: 0,
-      name: 'Poop',
+      name: 'Pup',
       imgSrc: 'https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/d/domestic-dog_thumb.jpg'
 
     },
@@ -34,7 +34,7 @@ var model = {
   ]
 };
 
-var octopus = {
+var controller = {
   init: function() {
     model.currentDog = model.dogs[0];
     dogListView.init();
@@ -65,14 +65,14 @@ var dogView = {
     this.countElem = document.getElementById('dog-count');
 
     this.dogImageElem.addEventListener('click', function(e) {
-      octopus.incrementCounter();
+      controller.incrementCounter();
     });
 
     this.render();
   },
 
   render: function() {
-    var currentDog = octopus.getCurrentDog();
+    var currentDog = controller.getCurrentDog();
     this.countElem.textContent = currentDog.clickCount;
     this.dogNameElem.textContent = currentDog.name;
     this.dogImageElem.src = currentDog.imgSrc;
@@ -90,7 +90,7 @@ var dogListView = {
 
   render: function() {
     var dog, elem, i;
-    var dogs = octopus.getDogs();
+    var dogs = controller.getDogs();
 
     this.dogListElem.innerHTML = '';
 
@@ -103,7 +103,7 @@ var dogListView = {
 
       elem.addEventListener('click', (function(dogCopy) {
         return function() {
-          octopus.setCurrentDog(dogCopy);
+          controller.setCurrentDog(dogCopy);
           dogView.render();
         };
       })(dog));
@@ -114,4 +114,4 @@ var dogListView = {
   }
 };
 
-octopus.init();
+controller.init();
