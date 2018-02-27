@@ -99,6 +99,7 @@ var dogListView = {
 
       elem = document.createElement('button');
       elem.textContent = dog.name;
+      elem.className = 'btn btn-primary';
 
       elem.addEventListener('click', (function(dogCopy) {
         return function() {
